@@ -1,0 +1,181 @@
+body {
+    margin: 48px;
+    background: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.display-container {
+    position: relative;
+    margin-right: 24px;
+    float: left;
+}
+
+.display-container div.segment-x,
+.display-container div.segment-y {
+    position: absolute;
+    background: #0f0;
+}
+
+.display-container span.segment-border {
+    display: block;
+    position: absolute;
+}
+
+.display-container.display-size-12 {
+    width: 122px;
+    height: 220px;
+}
+
+.display-container.display-size-12 .segment-x {
+    width: 72px;
+    left: 13px;
+    border-bottom: 12px solid #0f0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-x .segment-border {
+    top: 12px;
+    left: -12px;
+    right: -12px;
+    border-top: 12px solid #0f0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-y {
+    height: 72px;
+    width: 0;
+    border-right: 12px solid #0f0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-y .segment-border {
+    position: relative;
+    left: 12px;
+    height: 72px;
+    margin-top: -12px;
+    border-left: 12px solid #0f0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-a {
+    top: 0;
+}
+
+.display-container.display-size-12 .segment-b {
+    top: 13px;
+    left: 98px;
+}
+
+.display-container.display-size-12 .segment-c {
+    top: 111px;
+    left: 98px;
+}
+
+.display-container.display-size-12 .segment-d {
+    top: 196px;
+}
+
+.display-container.display-size-12 .segment-e {
+    top: 111px;
+    left: 0px;
+}
+
+.display-container.display-size-12 .segment-f {
+    top: 13px;
+    left: 0px;
+}
+
+.display-container.display-size-12 .segment-g {
+    top: 98px;
+}
+
+/* Digit masks (turn off segments) */
+.display-no-0 .segment-g,
+.display-no-1 .segment-a,
+.display-no-1 .segment-d,
+.display-no-1 .segment-e,
+.display-no-1 .segment-f,
+.display-no-1 .segment-g,
+.display-no-2 .segment-c,
+.display-no-2 .segment-f,
+.display-no-3 .segment-e,
+.display-no-3 .segment-f,
+.display-no-4 .segment-a,
+.display-no-4 .segment-d,
+.display-no-4 .segment-e,
+.display-no-5 .segment-b,
+.display-no-5 .segment-e,
+.display-no-6 .segment-b,
+.display-no-7 .segment-d,
+.display-no-7 .segment-e,
+.display-no-7 .segment-f,
+.display-no-7 .segment-g,
+.display-no-9 .segment-e {
+    opacity: 0.1;
+}
+
+/* Clock layout */
+#clock-container {
+    margin: 0 auto;
+    width: 600px;
+    height: 220px;
+}
+
+#clock-container .display-container:last-child {
+    margin: 0;
+}
+
+#clock-container:after {
+    display: block;
+    content: ".";
+    visibility: hidden;
+    clear: both;
+}
+
+#display-2,
+#display-4 {
+    margin-right: 60px;
+}
+
+/* User guess display */
+#userGuess {
+    margin: 40px auto;
+    width: 122px;
+    height: 220px;
+    position: relative;
+}
+
+#userGuess .segment-x,
+#userGuess .segment-y {
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+#userGuess .on {
+    opacity: 1 !important;
+}
+
+#countdown {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #ff0;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
