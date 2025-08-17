@@ -1,44 +1,55 @@
-<h1>7-Segment XOR Game</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Segment XOR Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="7seg.js" defer></script>
+</head>
+<body>
+    <h1>7-Segment XOR Game</h1>
     <p>Guess the XOR of the current time (HH:MM). You have until the next minute!</p>
 
     <!-- Clock -->
     <div id="clock-container">
-      <div id="display-1" class="display-container display-size-12 display-no-0">
-        <div class="segment-x segment-a"><span class="segment-border"></span></div>
-        <div class="segment-y segment-b"><span class="segment-border"></span></div>
-        <div class="segment-y segment-c"><span class="segment-border"></span></div>
-        <div class="segment-x segment-d"><span class="segment-border"></span></div>
-        <div class="segment-y segment-e"><span class="segment-border"></span></div>
-        <div class="segment-y segment-f"><span class="segment-border"></span></div>
-        <div class="segment-x segment-g"><span class="segment-border"></span></div>
-      </div>
-      <div id="display-2" class="display-container display-size-12 display-no-0">
-        <div class="segment-x segment-a"><span class="segment-border"></span></div>
-        <div class="segment-y segment-b"><span class="segment-border"></span></div>
-        <div class="segment-y segment-c"><span class="segment-border"></span></div>
-        <div class="segment-x segment-d"><span class="segment-border"></span></div>
-        <div class="segment-y segment-e"><span class="segment-border"></span></div>
-        <div class="segment-y segment-f"><span class="segment-border"></span></div>
-        <div class="segment-x segment-g"><span class="segment-border"></span></div>
-      </div>
-      <div id="display-3" class="display-container display-size-12 display-no-0">
-        <div class="segment-x segment-a"><span class="segment-border"></span></div>
-        <div class="segment-y segment-b"><span class="segment-border"></span></div>
-        <div class="segment-y segment-c"><span class="segment-border"></span></div>
-        <div class="segment-x segment-d"><span class="segment-border"></span></div>
-        <div class="segment-y segment-e"><span class="segment-border"></span></div>
-        <div class="segment-y segment-f"><span class="segment-border"></span></div>
-        <div class="segment-x segment-g"><span class="segment-border"></span></div>
-      </div>
-      <div id="display-4" class="display-container display-size-12 display-no-0">
-        <div class="segment-x segment-a"><span class="segment-border"></span></div>
-        <div class="segment-y segment-b"><span class="segment-border"></span></div>
-        <div class="segment-y segment-c"><span class="segment-border"></span></div>
-        <div class="segment-x segment-d"><span class="segment-border"></span></div>
-        <div class="segment-y segment-e"><span class="segment-border"></span></div>
-        <div class="segment-y segment-f"><span class="segment-border"></span></div>
-        <div class="segment-x segment-g"><span class="segment-border"></span></div>
-      </div>
+        <div id="display-1" class="display-container display-size-12 display-no-0">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+        </div>
+        <div id="display-2" class="display-container display-size-12 display-no-0">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+        </div>
+        <div id="display-3" class="display-container display-size-12 display-no-0">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+        </div>
+        <div id="display-4" class="display-container display-size-12 display-no-0">
+            <div class="segment-x segment-a"><span class="segment-border"></span></div>
+            <div class="segment-y segment-b"><span class="segment-border"></span></div>
+            <div class="segment-y segment-c"><span class="segment-border"></span></div>
+            <div class="segment-x segment-d"><span class="segment-border"></span></div>
+            <div class="segment-y segment-e"><span class="segment-border"></span></div>
+            <div class="segment-y segment-f"><span class="segment-border"></span></div>
+            <div class="segment-x segment-g"><span class="segment-border"></span></div>
+        </div>
     </div>
 
     <!-- Countdown -->
@@ -47,14 +58,17 @@
     <!-- User Guess -->
     <h2>Your Guess</h2>
     <div id="userGuess" class="display-container display-size-12">
-      <div class="segment-x segment-a" data-bit="6"><span class="segment-border"></span></div>
-      <div class="segment-y segment-b" data-bit="5"><span class="segment-border"></span></div>
-      <div class="segment-y segment-c" data-bit="4"><span class="segment-border"></span></div>
-      <div class="segment-x segment-d" data-bit="3"><span class="segment-border"></span></div>
-      <div class="segment-y segment-e" data-bit="2"><span class="segment-border"></span></div>
-      <div class="segment-y segment-f" data-bit="1"><span class="segment-border"></span></div>
-      <div class="segment-x segment-g" data-bit="0"><span class="segment-border"></span></div>
+        <div class="segment-x segment-a" data-bit="6"><span class="segment-border"></span></div>
+        <div class="segment-y segment-b" data-bit="5"><span class="segment-border"></span></div>
+        <div class="segment-y segment-c" data-bit="4"><span class="segment-border"></span></div>
+        <div class="segment-x segment-d" data-bit="3"><span class="segment-border"></span></div>
+        <div class="segment-y segment-e" data-bit="2"><span class="segment-border"></span></div>
+        <div class="segment-y segment-f" data-bit="1"><span class="segment-border"></span></div>
+        <div class="segment-x segment-g" data-bit="0"><span class="segment-border"></span></div>
     </div>
 
     <button onclick="checkGuess()">Submit</button>
     <div id="result"></div>
+</body>
+
+</html>
