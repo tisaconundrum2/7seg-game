@@ -59,11 +59,37 @@ function checkGuess() {
         result.textContent = "✅ Correct!";
         result.style.color = "lightgreen";
     } else {
-        result.textContent =
-            "❌ Wrong! Correct pattern was " +
-            correctXor.toString(2).padStart(7, "0");
+        result.textContent = "❌ Wrong!";
         result.style.color = "red";
+
+        // Flash wrong segments
+        const segs = document.querySelectorAll("#userGuess [data-bit]");
+        let flashCount = 0;
+        const flashInterval = setInterval(() => {
+            segs.forEach((seg) => {
+                const bit = parseInt(seg.dataset.bit, 10);
+                const shouldBeOn = (correctXor & (1 << bit)) !== 0;
+                const isOn = seg.classList.contains("on");
+
+                if (shouldBeOn !== isOn) {
+                    seg.classList.toggle("wrong");
+                }
+            });
+            flashCount++;
+            if (flashCount > 5) {
+                clearInterval(flashInterval);
+                segs.forEach((seg) => {
+                    const bit = parseInt(seg.dataset.bit, 10);
+                    const shouldBeOn = (correctXor & (1 << bit)) !== 0;
+                    const isOn = seg.classList.contains("on");
+                    if (shouldBeOn !== isOn) {
+                        seg.classList.add("wrong");
+                    }
+                });
+            }
+        }, 300);
     }
+
     gameOver = true;
 }
 
@@ -89,7 +115,9 @@ setInterval(() => {
         document.getElementById("result").textContent = "";
         document
             .querySelectorAll("#userGuess [data-bit]")
-            .forEach((seg) => seg.classList.remove("on"));
+            .forEach((seg) => {
+                seg.classList.remove("on", "wrong");
+            });
     }
 }, 1000);
 

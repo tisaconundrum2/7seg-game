@@ -10,10 +10,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-.clear {
-    clear: both;
-}
-
 .display-container {
     position: relative;
     margin-right: 24px;
@@ -166,6 +162,11 @@ h1 {
 
 #userGuess .on {
     opacity: 1 !important;
+}
+
+#userGuess .wrong {
+    opacity: 1 !important;
+    filter: drop-shadow(0 0 6px red);
 }
 
 #countdown {
