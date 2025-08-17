@@ -23,7 +23,6 @@ h1 {
 .display-container div.segment-x,
 .display-container div.segment-y {
     position: absolute;
-    background: #0f0;
 }
 
 .display-container span.segment-border {
